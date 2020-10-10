@@ -1,4 +1,8 @@
 class ChecksController < ApplicationController
+  #ログインしないと閲覧以外できない
+  before_action :require_user_logged_in, only: [:show, :new, :create, :edit, :update]
+  
+  
   def index
       @checks=Check.all
   end
