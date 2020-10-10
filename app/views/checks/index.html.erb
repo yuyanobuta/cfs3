@@ -1,0 +1,11 @@
+<h1>チェック結果一覧</h1>
+<ul>
+    <% @checks.each do |check|%>
+    
+    
+                
+    <li><%=link_to check.id, check%>:<%=check.cari%>/<%=check.des%>/<%=check.no%>/<%=check.geta%>/<%=check.pare%>/<%=check.tno%>/<%=check.bikou%></li>
+    
+    <%end%>
+    <%= link_to '新規登録', new_check_path %>
+</ul>

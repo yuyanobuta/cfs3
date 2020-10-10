@@ -1,0 +1,30 @@
+<h1>新規登録</h1>
+<%=form_with(model: @check,local: true) do |f|%>>
+<%= f.label :syu, '種別' %>
+<%= f.text_field :syu %>
+
+<p><%= f.label :cari, 'キャリア' %>
+<%= f.text_field :cari %></p>
+
+<p><%= f.label :des, '仕向地' %>
+<%= f.text_field :des %></p>
+
+<p><%= f.label :no, 'マスターNO' %>
+<%= f.text_field :no %></p>
+
+<p><%= f.label :geta, 'パレット枚数' %>
+<%= f.text_field :geta %></p>
+
+<p><%= f.label :pare, 'ゲタ枚数' %>
+<%= f.text_field :pare %></p>
+
+<p><%= f.label :tno, '他業者NO' %>
+<%= f.text_field :tno %></p>
+
+<p><%= f.label :bikou, '備考' %>
+<%= f.text_field :bikou %></p>
+
+<p><%= f.submit '登録' %></p>
+<% end %>
+
+<%= link_to '一覧に戻る', checks_path %>
