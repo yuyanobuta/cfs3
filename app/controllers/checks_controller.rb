@@ -9,11 +9,11 @@ class ChecksController < ApplicationController
   end
 
   def new
-    @check=Check.new(check_params)
+    @check=Check.new
   end
 
   def create
-    @check=Check.new
+    @check=Check.new(check_params)
                     
     if @check.save
       flash[:success] = "正常に登録されました。"
@@ -31,9 +31,12 @@ class ChecksController < ApplicationController
 
   def update
      @check=Check.find(params[:id])
-     
-  　  @check.update(check.params)
-   　
+     if @check.update(check_params)
+       flash[:success] = "正常に変更されました。"
+     redirect_to @check
+     else
+     　  flash[:dangert] = "エラーが発生しました。"
+     end
   end
  
 
@@ -52,4 +55,3 @@ class ChecksController < ApplicationController
     params.require(:check).permit(:syu,:cari, :des, :no, :geta, :pare, :tno, :bikou) 
   end
 end
-
