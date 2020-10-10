@@ -1,30 +1,50 @@
 <h1>新規登録</h1>
-<%=form_with(model: @check,local: true) do |f|%>>
+<%=form_with(model: @check,local: true) do |f|%>
+
+ <div class="form-group">
 <%= f.label :syu, '種別' %>
-<%= f.text_field :syu %>
-
+<%= f.text_field :syu, class: 'form-control' %>
+ </div>
+ 
+<div class="form-group">
 <p><%= f.label :cari, 'キャリア' %>
-<%= f.text_field :cari %></p>
+<%= f.text_field :cari, class: 'form-control' %></p>
+</div>
 
+<div class="form-group">
 <p><%= f.label :des, '仕向地' %>
-<%= f.text_field :des %></p>
+<%= f.text_field :des, class: 'form-control' %></p>
+</div>
 
+<div class="form-group">
 <p><%= f.label :no, 'マスターNO' %>
-<%= f.text_field :no %></p>
+<%= f.text_field :no, class: 'form-control' %></p>
+</div>
 
+<div class="form-group">
 <p><%= f.label :geta, 'パレット枚数' %>
-<%= f.text_field :geta %></p>
+<%= f.text_field :geta, class: 'form-control' %></p>
+</div>
 
+<div class="form-group">
 <p><%= f.label :pare, 'ゲタ枚数' %>
-<%= f.text_field :pare %></p>
+<%= f.text_field :pare, class: 'form-control' %></p>
+</div>
 
+<div class="form-group">
 <p><%= f.label :tno, '他業者NO' %>
-<%= f.text_field :tno %></p>
+<%= f.text_field :tno, class: 'form-control' %></p>
+</div>
 
-<p><%= f.label :bikou, '備考' %>
-<%= f.text_field :bikou %></p>
+<div class="form-group">
+<p><%= f.label :bikou, "備考" %>
+<%= f.text_field :bikou, class: 'form-control' %></p>
+</div>
 
-<p><%= f.submit '登録' %></p>
-<% end %>
 
-<%= link_to '一覧に戻る', checks_path %>
+<p><%= f.submit '登録',class: 'btn btn-primary' %></p>
+
+
+<%= link_to '一覧に戻る', checks_path,class: 'btn btn-primary' %>
+
+<%end%>

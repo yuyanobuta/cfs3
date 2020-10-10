@@ -1,11 +1,40 @@
 <h1>チェック結果一覧</h1>
-<ul>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>種別</th>
+        <th>キャリア</th>
+        <th>仕向地</th>
+        <th>マスターNO</th>
+        <th>パレット枚数</th>
+        <th>ゲタ枚数</th>
+        <th>他業者NO</th>
+        <th>備考</th>
+        <th>登録時間</th>
+        <th>最終更新時間</th>
+      </tr>
+    </thead>
+    <tbody>
+        
     <% @checks.each do |check|%>
+    <tr>
+        <td><%= link_to check.id,check %></td>
+        <td><%=check.syu%></td>
+        <td><%=check.cari%></td>
+        <td><%=check.des%></td>
+        <td><%=check.no%></td>
+        <td><%=check.geta%></td>
+        <td><%=check.pare%></td>
+        <td><%=check.tno%></td>
+        <td><%=check.bikou%></td>
+        <td><%=check.created_at%></td>
+        <td><%=check.updated_at%></td>
+     </tr>
+      <% end %>
+    </tbody>
+  </table>            
+
     
     
-                
-    <li><%=link_to check.id, check%>:<%=check.syu%>/<%=check.cari%>/<%=check.des%>/<%=check.no%>/<%=check.geta%>/<%=check.pare%>/<%=check.tno%>/<%=check.bikou%>/<%=check.created_at%></li>
-    
-    <%end%>
-    <%= link_to '新規登録', new_check_path %>
-</ul>
+    <%= link_to '新規登録', new_check_path , class: "btn btn-primary"%>

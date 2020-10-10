@@ -1,16 +1,54 @@
 <h1>チェック詳細</h1>
 
-<p><%=@check.syu%></p>
-<p><%=@check.cari%></p>
-<p><%=@check.des%></p>
-<p><%=@check.no%></p>
-<p><%=@check.geta%></p>
-<p><%=@check.pare%></p>
-<p><%=@check.tno%></p>
-<p><%=@check.bikou%></p>
+<table class="table table-bordered">
+  <tr>
+     <th>id</th>
+     <td><%= @check.id %></td>
+  </tr>
+  
+  <tr>
+      <th>種別</th>
+      <td><%=@check.syu%></td>
+  </tr>
+  
+  <tr>
+      <th>キャリア</th>
+      <td><%=@check.cari%></td>
+  </tr>
+  
+  <tr>
+      <th>仕向地</th>
+      <td><%=@check.des%></td>
+  </tr>
+  
+  <tr>
+      <th>マスターNO</th>
+      <td><%=@check.no%></td>
+  </tr>
+  
+  <tr>
+      <th>パレット枚数</th>
+      <td><%=@check.pare%></td>
+  </tr>
+  
+  <tr>
+      <th>ゲタ枚数/th>
+      <td><%=@check.geta%></td>
+  </tr>
+  
+  <tr>
+      <th>他業者NO</th>
+      <td><%=@check.tno%></td>
+  </tr>
+  
+  <tr>
+      <th>備考</th>
+      <td><%=@check.bikou%></td>
+  </tr>
+
+</table>
 
 
-
-<%= link_to '一覧に戻る', checks_path %>
-<%= link_to '編集する', edit_check_path(@check) %>
-<%= link_to '削除する', @check, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>
+<%= link_to '一覧に戻る', checks_path,class:"btn btn-light" %>
+<%= link_to '編集する', edit_check_path(@check),class:"btn btn-light" %>
+<%= link_to '削除する', @check, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } ,class:"btn btn-light"%>
