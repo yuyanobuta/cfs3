@@ -1,6 +1,7 @@
 class CreateChecks < ActiveRecord::Migration[5.2]
   def change
     create_table :checks do |t|
+     
       t.string :syu
       t.string :cari
       t.string :des

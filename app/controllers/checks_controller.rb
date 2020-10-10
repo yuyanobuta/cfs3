@@ -1,7 +1,6 @@
 class ChecksController < ApplicationController
   def index
       @checks=Check.all
-      
   end
 
   def show
@@ -52,6 +51,6 @@ class ChecksController < ApplicationController
   private
   
   def check_params
-    params.require(:check).permit(:syu,:cari, :des, :no, :geta, :pare, :tno, :bikou) 
+    params.require(:check).permit(:hansaki,:syu,:cari, :des, :no, :geta, :pare, :tno, :bikou) 
   end
 end

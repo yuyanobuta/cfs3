@@ -2,7 +2,13 @@
 <%=form_with(model: @check,local: true) do |f|%>
 
  <div class="form-group">
-<%= f.label :syu, '種別' %>
+<p><%= f.label :hansaki, '搬入先' %>
+<%= f.text_field :hansaki, class: 'form-control' %>
+ </div>
+
+
+ <div class="form-group">
+<p><%= f.label :syu, '種別' %>
 <%= f.text_field :syu, class: 'form-control' %>
  </div>
  
